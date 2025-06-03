@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}salut zayneb{% endblock %}
+
+{% block body %}
+
+{% for  article in articles  %}
+<article>
+    <h2>{{article.title}}</h2>
+    <div class="metadata">Edité le {{article.createdat|date("m/d/y")}}</div>
+    <div class="content">
+      <img src={{article.image}} alt="">
+      <p>{{article.content}}</p>
+      
+      <a href="{{path('blog_show',{id:article.id})}}" class="btn btn-primary">Lire la suite</a>
+    </div>
+  </article>
+
+{% endfor %}
+
+
+
+
+<!-- + 2 autres articles -->
+{% endblock %}
